@@ -12569,7 +12569,7 @@ h5,
 
 .resume-wrap .position {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #000000;
 }
 
@@ -13897,3 +13897,43 @@ textarea.form-control {
     stroke-dashoffset: -136px;
   }
 }
+
+.minor {
+  font-size: 0.5em; 
+  color: #444;
+}
+
+.uni-info {
+  display: flex !important;
+  gap: 15px;
+}
+
+.uni-info h2,
+.uni-info p {
+  display: block !important;
+  margin: 0;
+}
+
+.uni-info p {
+  margin-top: 5px;
+}
+
+/* 데스크톱: hover 가능한 기기에서만 hover 효과 적용*/
+@media (hover: hover) and (pointer: fine) {
+  .project:hover .overlay {
+    opacity: 1;     
+  }
+}
+
+/* 모바일: hover 효과 제거 (항상 기본 상태 유지)*/
+@media (hover: none) and (pointer: coarse) {
+  .project .overlay {
+    opacity: 0 !important;  
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .project .text {
+    opacity: 0 !important;
+  }
+} 
