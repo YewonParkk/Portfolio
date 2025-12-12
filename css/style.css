@@ -12573,6 +12573,16 @@ h5,
   color: #000000;
 }
 
+.hanwoori-link a {
+  color: #b8aadb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.hanwoori-link a:hover {
+  color: #7c6fd1;
+}
+
 .ftco-partner {
   padding: 4em 0 !important;
 }
