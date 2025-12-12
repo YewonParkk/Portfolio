@@ -13918,15 +13918,22 @@ textarea.form-control {
   margin-top: 5px;
 }
 
-.affiliated-list {
-  margin: 5px 0 0 0;
-  padding-left: 18px;
+/* ===== 공통 li 복구 규칙 ===== */
+#page-1 ul,
+#page-2 ul,
+#page-3 ul {
+  list-style: disc !important;
+  padding-left: 20px !important;
+  margin-left: 0 !important;
 }
 
-.research-list {
-  margin: 0 0 12px 0;
-  padding-left: 20px;
+/* li 간격 */
+#page-1 li,
+#page-2 li,
+#page-3 li {
+  margin-bottom: 4px;
 }
+
 
 .cert-table {
   border-collapse: collapse;
@@ -13945,9 +13952,12 @@ textarea.form-control {
 .cert-table td {
   padding: 5px 10px;
   vertical-align: top;
-  border-left: none;
-  border-right: none;
-  border-top: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* 마지막 행 아래 선 제거 (선택) */
+#page-4 .cert-table tbody tr:last-child td {
+  border-bottom: none;
 }
 
 .cert-table th,
