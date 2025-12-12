@@ -13938,7 +13938,7 @@ textarea.form-control {
 }
 
 .cert-table thead tr th {
-  border-top: none; /* 맨 위 선 제거 */
+  border-top: none !important; /* 맨 위 선 제거 */
 }
 
 .cert-table th,
