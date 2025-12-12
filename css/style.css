@@ -13918,6 +13918,47 @@ textarea.form-control {
   margin-top: 5px;
 }
 
+.affiliated-list {
+  margin: 5px 0 0 0;
+  padding-left: 18px;
+}
+
+.research-list {
+  margin: 0 0 12px 0;
+  padding-left: 20px;
+}
+
+.cert-table {
+  border-collapse: collapse;
+  border: none; /* 테이블 외곽선 제거 */
+}
+
+.cert-table tr:last-child td {
+  border-bottom: none; /* 맨 아래 선 제거 */
+}
+
+.cert-table thead tr th {
+  border-top: none; /* 맨 위 선 제거 */
+}
+
+.cert-table th,
+.cert-table td {
+  padding: 5px 10px;
+  vertical-align: top;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+.cert-table th,
+.cert-align-center {
+  text-align: center;
+}
+
+.cert-table th {
+  color: #000;
+}
+
 /* 데스크톱: hover 가능한 기기에서만 hover 효과 적용*/
 @media (hover: hover) and (pointer: fine) {
   .project:hover .overlay {
@@ -13937,3 +13978,192 @@ textarea.form-control {
     opacity: 0 !important;
   }
 } 
+
+@media (max-width: 768px) {
+
+  /* --- 공통: 모바일에서 네비, 테이블 비고 숨기기 --- */
+  #navi {
+    display: none !important;
+  }
+
+  table tr th:last-child,
+  table tr td:last-child {
+    display: none !important;
+  }
+
+  /* ===========================================================
+       [0] ABOUT ME 섹션
+     =========================================================== */
+
+  /* 왼쪽 원본 이미지 숨기기 */
+  #about-section .row.d-flex.no-gutters > .col-md-6.col-lg-6.d-flex:first-child {
+    display: none !important;
+  }
+
+  /* 텍스트 영역 padding 조정 */
+  #about-section .col-md-6.col-lg-6.pl-md-5.py-5 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* 소개 문단 위에 모바일용 사진 삽입 */
+  #about-section .heading-section > p:first-of-type {
+    margin-top: 20px;
+  }
+
+  #about-section .heading-section > p:first-of-type::before {
+    content: "";
+    display: block;
+    width: 50%;
+    margin: 0 auto 20px auto;
+    aspect-ratio: 3 / 4;
+    background-image: url("../images/myphoto.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+/* ===========================================================
+   [1] EDUCATION 섹션 (모바일용 순서 재배치)
+   =========================================================== */
+
+   #page-1 .resume-wrap .text {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* uni-info 내부 요소들은 flex 정렬 영향을 받도록 flatten */
+#page-1 .resume-wrap .text .uni-info {
+    display: contents !important;
+}
+
+/* 1) 학교명 */
+#page-1 .resume-wrap .text h2 {
+    order: 1 !important;
+}
+
+/* 2) 전공 */
+#page-1 .resume-wrap .text .position {
+    order: 2 !important;
+    margin-top: 6px;
+}
+
+/* 3) GPA */
+#page-1 .resume-wrap .text .uni-info p {
+    order: 3 !important;
+    margin-top: 4px;
+}
+
+/* 4) affiliated-list (ul 포함 전체 블록) */
+#page-1 .resume-wrap .text .affiliated-list {
+    order: 4 !important;
+    margin-top: 6px !important;
+}
+
+
+  /* ===========================================================
+       [2] RESEARCH 섹션
+     =========================================================== */
+
+  /* p:before, p:after 제거 (가상 요소 공간 차지 방지) */
+  #page-2 p:before,
+  #page-2 p:after {
+      content: none !important;
+      display: none !important;
+  }
+
+  #page-2 .resume-wrap {
+    align-items: flex-start !important;
+  }
+
+  #page-2 .text {
+      display: block !important;
+  }
+
+  #page-2 .text h2 {
+    margin-top: 0.3rem !important;
+  }
+
+    #page-2 .position {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .research-list {
+    margin: 6px 0 12px 0;
+    padding-left: 20px;
+}
+
+.research-list li {
+    list-style-type: disc;
+    margin-bottom: 4px;
+}
+
+
+  /* ===========================================================
+        [3] PUBLICATIONS 섹션
+     =========================================================== */
+
+  #page-3 .position + p {
+    display: none !important;
+  }
+
+  #page-3 .position {
+    display: block;
+    margin-bottom: 8px !important;
+}
+
+
+  /* ===========================================================
+        [4] Certification 섹션
+     =========================================================== */
+     
+     #page-4 table {
+      width: 97%;
+     }
+/* 테이블 3번째~5번째 열 숨기기 (주관 / 점수 / 비고) */
+#page-4 table.cert-table th:nth-child(3),
+#page-4 table.cert-table td:nth-child(3),
+#page-4 table.cert-table th:nth-child(4),
+#page-4 table.cert-table td:nth-child(4),
+#page-4 table.cert-table th:nth-child(5),
+#page-4 table.cert-table td:nth-child(5) {
+  display: none !important;
+}
+
+#page-4 table.cert-table td:nth-child(1){
+  color: #000;
+}
+/* 1번째 열(자격증명) 2번째 열(취득일)을 더 보기 좋게 개선 */
+#page-4 table.cert-table td:nth-child(1),
+#page-4 table.cert-table td:nth-child(2) {
+  font-size: 15px;
+  padding: 5px 6px;
+}
+
+/* 모바일에서 두 열만 있으니 column 너비 자동 조정 */
+#page-4 table.cert-table td:nth-child(1) {
+  width: 75%;
+}
+
+#page-4 table.cert-table td:nth-child(2) {
+  width: 25%;
+  text-align: right;
+}
+
+#page-4 .cert-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#page-4 td br , #page-4 th{
+  display: none;
+}
+
+
+#page-4 td {
+  white-space: normal !important;
+  border: none;
+}
+
+}
+
