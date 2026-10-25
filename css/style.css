@@ -14192,3 +14192,11 @@ textarea.form-control {
   }
 
 }
+
+/* Align separators between publications within the same year with the text column. */
+#page-3 .publication-inner-divider {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 28px 0 36px;
+}
