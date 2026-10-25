@@ -14040,7 +14040,7 @@ textarea.form-control {
     width: 50%;
     margin: 0 auto 20px auto;
     aspect-ratio: 3 / 4;
-    background-image: url("../images/myphoto.jpg");
+    background-image: url("../images/Yewon%20Park.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -14201,30 +14201,40 @@ textarea.form-control {
   margin: 28px 0 36px;
 }
 
-/* About portrait: responsive image sizing and consistent alignment. */
-#about-section .img-about {
-  width: 100%;
-  height: auto !important;
-  min-height: 0 !important;
-  align-self: flex-start;
-  align-items: flex-start !important;
-  justify-content: flex-end;
-}
-#about-section .img-about > .img {
-  display: block !important;
-  width: 100%;
-  height: auto !important;
-  min-height: 0 !important;
-  aspect-ratio: 4 / 5;
-  align-self: flex-start !important;
-  background-position: center top !important;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-}
-#about-section .img-about > .overlay { display: none !important; }
+/* About portrait: keep the desktop image aligned within its grid column. */
 @media (min-width: 768px) {
-  #about-section .img-about { max-width: 420px; margin-left: auto; margin-right: 0; }
+  #about-section .row.no-gutters > .col-md-6:first-child {
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  #about-section .img-about {
+    flex: 0 1 420px;
+    width: 100%;
+    max-width: 420px;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-left: auto;
+    margin-right: 0;
+    align-self: flex-start;
+  }
+  #about-section .img-about > .img {
+    display: block !important;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 5;
+    background-position: center top !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+  }
+  #about-section .img-about > .overlay { display: none !important; }
 }
 @media (max-width: 767.98px) {
-  #about-section .img-about { max-width: 300px; margin-left: auto; margin-right: auto; }
+  #about-section .heading-section > p:first-of-type::before {
+    background-image: url("../images/Yewon%20Park.png");
+    width: min(75%, 300px);
+    aspect-ratio: 4 / 5;
+    background-size: contain;
+    background-position: center top;
+  }
 }
