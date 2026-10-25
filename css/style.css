@@ -14201,14 +14201,30 @@ textarea.form-control {
   margin: 28px 0 36px;
 }
 
-/* About portrait: compact, top-aligned photo instead of an oversized stretched panel. */
+/* About portrait: responsive image sizing and consistent alignment. */
+#about-section .img-about {
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  align-self: flex-start;
+  align-items: flex-start !important;
+  justify-content: flex-end;
+}
+#about-section .img-about > .img {
+  display: block !important;
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 4 / 5;
+  align-self: flex-start !important;
+  background-position: center top !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+#about-section .img-about > .overlay { display: none !important; }
 @media (min-width: 768px) {
-  #about-section .img-about { align-self: flex-start; height: 470px; }
-  #about-section .img-about > .img { height: 470px; min-height: 0; background-position: center top !important; background-size: contain !important; }
-  #about-section .img-about > .overlay { display: none; }
+  #about-section .img-about { max-width: 420px; margin-left: auto; margin-right: 0; }
 }
 @media (max-width: 767.98px) {
-  #about-section .img-about { height: 380px; }
-  #about-section .img-about > .img { height: 380px; min-height: 0; background-position: center top !important; background-size: contain !important; }
-  #about-section .img-about > .overlay { display: none; }
+  #about-section .img-about { max-width: 300px; margin-left: auto; margin-right: auto; }
 }
